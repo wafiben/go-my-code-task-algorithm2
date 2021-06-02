@@ -31,6 +31,7 @@ BEGIN
        IF(tab1[i]=tab2[j] AND i<>j) THEN
         found:=TRUE
         BREAK;
+        sum:=sum+tab1[i]
         END_IF
   
     END_FOR

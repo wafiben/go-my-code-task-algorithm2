@@ -1,0 +1,65 @@
+ALGORITHM String_algorithm
+VAR
+    i: INTEGER;
+    tab1:ARRAY_OF INTEGER;
+    tab2:ARRAY_OF INTEGER;
+    tab:ARRAY_OF INTEGER;
+    n1:INTEGER;
+    n2:INTEGER;
+    count:INTEGER;
+    sum_if_not exist:INTEGER;
+    sum_if_exist_more_than_one:INTEGER;
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+
+BEGIN
+sum_if_not exist:=0;
+sum_if_exist_more_than_one:=0;
+ sum=0;
+ i:=0;
+ count:=0;
+
+   Write('give the length of the table one ');
+   Read(n1);
+   Write('give the length of the table two ')
+    Read(n2);
+ FOR i FROM 0 TO n1-1 STEP 1  DO 
+  Write('Print Array :')
+  Read(tab1[i])
+    END_FOR
+    FOR i FROM 0 TO n1-1 STEP 1  DO 
+  Write('Print Array :')
+  Read(tab1[j])
+    END_FOR
+    tab:=concat(tab1,tab2);
+    
+      
+     
+     FOR i FROM 0 TO tab.length -1 STEP 1  DO
+       IF (htab.lookup(tab[i]) = TRUE) THEN
+           count := htab.get(str[i]);
+           htab.insert(tab[i],count+1);
+       ELSE
+           htab.insert(tab[i],1);
+       END_IF
+   END_FOR
+         END_FOR
+          FOR i FROM 0 TO tab.length-1 STEP 1  DO
+         IF (htab.get(tab[i]) = 1) THEN
+            sum_if_not_exist := sum_if_not exist+ tab[i]
+            END_IF
+        END_FOR
+         FOR i FROM 0 TO tab.length-1 STEP 1  DO
+         IF (htab.get(tab[i]) > 1) THEN
+            sum_if_exist_more_than_one := sum_if_exist_more_than_one+ tab[i]
+            END_IF
+        END_FOR
+
+     
+  Write(sum_if_not_exist);
+   Write(sum_if_exist_more_than_one);
+
+
+
+     
+
+END
