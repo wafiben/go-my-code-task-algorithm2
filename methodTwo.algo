@@ -7,7 +7,7 @@ VAR
     n1:INTEGER;
     n2:INTEGER;
     count:INTEGER;
-    sum_if_not exist:INTEGER;
+    sum_if_exist_one_time:INTEGER;
     sum_if_exist_more_than_one:INTEGER;
     htab : HASH_TABLE<INTEGER,INTEGER>;
 
@@ -26,9 +26,9 @@ sum_if_exist_more_than_one:=0;
   Write('Print Array :')
   Read(tab1[i])
     END_FOR
-    FOR i FROM 0 TO n1-1 STEP 1  DO 
+    FOR j FROM 0 TO n1-1 STEP 1  DO 
   Write('Print Array :')
-  Read(tab1[j])
+  Read(tab2[j])
     END_FOR
     tab:=concat(tab1,tab2);
     
@@ -36,7 +36,7 @@ sum_if_exist_more_than_one:=0;
      
      FOR i FROM 0 TO tab.length -1 STEP 1  DO
        IF (htab.lookup(tab[i]) = TRUE) THEN
-           count := htab.get(str[i]);
+           count := htab.get(tab[i]);
            htab.insert(tab[i],count+1);
        ELSE
            htab.insert(tab[i],1);
@@ -45,7 +45,7 @@ sum_if_exist_more_than_one:=0;
          END_FOR
           FOR i FROM 0 TO tab.length-1 STEP 1  DO
          IF (htab.get(tab[i]) = 1) THEN
-            sum_if_not_exist := sum_if_not exist+ tab[i]
+            sum_if_exist_one_time := sum_if_exist_one_time+ tab[i]
             END_IF
         END_FOR
          FOR i FROM 0 TO tab.length-1 STEP 1  DO
@@ -55,7 +55,7 @@ sum_if_exist_more_than_one:=0;
         END_FOR
 
      
-  Write(sum_if_not_exist);
+  Write(sum_if_exist_one_time);
    Write(sum_if_exist_more_than_one);
 
 

@@ -20,9 +20,9 @@ BEGIN
   Write('Print Array :')
   Read(tab1[i])
     END_FOR
-    FOR i FROM 0 TO n1-1 STEP 1  DO 
+    FOR j FROM 0 TO n1-1 STEP 1  DO 
   Write('Print Array :')
-  Read(tab1[j])
+  Read(tab2[j])
     END_FOR
     tab:=concat(tab1,tab2);
        FOR i FROM 0 TO tab.length-1 STEP 1  DO 
